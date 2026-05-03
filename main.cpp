@@ -3,7 +3,7 @@
 int main() {
 
     Reproductor r;
-    r.iniciar();
+    r.cargarEstado();
 
     return 0;
 }
