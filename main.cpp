@@ -1,7 +1,9 @@
-#include <iostream>
+#include "classes/Reproductor.hpp"
 
 int main() {
-    std::cout << "HOLA EE PRIMER COMIT PA PROBAR";
 
+    Reproductor r;
+    r.iniciar();
 
+    return 0;
 }
