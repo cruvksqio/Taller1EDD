@@ -1,7 +1,7 @@
 #ifndef NODO_HPP
 #define NODO_HPP
 
-#include "../Core/Cancion.hpp"
+#include "../Clases/Cancion.hpp"
 
 struct Nodo {
     Cancion song;

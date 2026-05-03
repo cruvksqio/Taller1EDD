@@ -1,7 +1,7 @@
 #ifndef REPRODUCTOR_HPP
 #define REPRODUCTOR_HPP
 
-#include "Structure/SongList.hpp"
+#include "../Structure/SongList.hpp"
 
 class Reproductor {
 private:
