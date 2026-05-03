@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Taller1EDD
         main.cpp
-        Cancion.cpp
-        SongList.cpp
+        Core/Cancion.cpp
+        Structure/SongList.cpp
         Reproductor.cpp
 )
