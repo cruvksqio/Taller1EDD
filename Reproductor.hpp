@@ -9,6 +9,14 @@ private:
 
 public:
     void iniciar();
+    void play();
+    void prev();
+    void next();
+    void toggleShuffle();
+    void toggleRepeat();
+    void seePlaylist();
+    void seeSongList();
+    void exit();
 };
 
 #endif
