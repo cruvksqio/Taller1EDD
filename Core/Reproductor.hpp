@@ -5,18 +5,20 @@
 
 class Reproductor {
 private:
-    SongList listaCanciones;
+    SongList<Cancion> registroTotal; // Todas las canciones (cargadas de music_source.txt)
+    SongList<Cancion> listaReproduccion; // La cola actual
+
+    // Variables de estado
+    bool modoAleatorio;
+    int modoRepeticion; // 0: Desactivado, 1: Repetir una (R1), 2: Repetir todas (RA)
+    int estadoReproduccion; // 0: Detenida, 1: Reproduciendo, 2: En Pausa
 
 public:
-    void iniciar();
-    void play();
-    void prev();
-    void next();
-    void toggleShuffle();
-    void toggleRepeat();
-    void seePlaylist();
-    void seeSongList();
-    void exit();
+    // ... tus constructores y otros métodos ...
+
+    // Los dos nuevos métodos para la Fase 3
+    void cargarEstado(const std::string& archivoConfig);
+    void guardarEstado(const std::string& archivoConfig);
 };
 
 #endif

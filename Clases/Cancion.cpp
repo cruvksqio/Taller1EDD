@@ -1,29 +1,44 @@
 #include "Cancion.hpp"
+#include <iostream>
 
+// Constructor por defecto
 Cancion::Cancion() {
-    id = 0;
-    nombre = "";
-    artista = "";
-    album = "";
-    anio = 0;
-    duracion = 0;
-    ubicacion = "";
+    this->id = 0;
+    this->nombre = "Desconocido";
+    this->artista = "Desconocido";
+    this->album = "Desconocido";
+    this->anio = 0;
+    this->duracion = 0;
+    this->ruta = "";
 }
 
-Cancion::Cancion(int id, string nombre, string artista, string album, int anio, int duracion, string ubicacion) {
+// Constructor parametrizado
+Cancion::Cancion(int id, std::string nombre, std::string artista, std::string album,
+                 int anio, int duracion, std::string ruta) {
     this->id = id;
     this->nombre = nombre;
     this->artista = artista;
     this->album = album;
     this->anio = anio;
     this->duracion = duracion;
-    this->ubicacion = ubicacion;
+    this->ruta = ruta;
 }
 
-int Cancion::getId() { return id; }
-string Cancion::getNombre() { return nombre; }
-string Cancion::getArtista() { return artista; }
-string Cancion::getAlbum() { return album; }
-int Cancion::getAnio() { return anio; }
-int Cancion::getDuracion() { return duracion; }
-string Cancion::getUbicacion() { return ubicacion; }
+// Implementación de Getters
+int Cancion::getId() const { return id; }
+std::string Cancion::getNombre() const { return nombre; }
+std::string Cancion::getArtista() const { return artista; }
+std::string Cancion::getAlbum() const { return album; }
+int Cancion::getAnio() const { return anio; }
+int Cancion::getDuracion() const { return duracion; }
+std::string Cancion::getRuta() const { return ruta; }
+
+// Implementación de Setters
+void Cancion::setNombre(std::string nombre) { this->nombre = nombre; }
+void Cancion::setArtista(std::string artista) { this->artista = artista; }
+void Cancion::setAlbum(std::string album) { this->album = album; }
+
+// Método para imprimir
+void Cancion::imprimirDatos() const {
+    std::cout << nombre << " - " << artista << " (" << album << ") [" << anio << "]" << std::endl;
+}

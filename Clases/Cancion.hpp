@@ -2,29 +2,37 @@
 #define CANCION_HPP
 
 #include <string>
-using namespace std;
 
 class Cancion {
 private:
     int id;
-    string nombre;
-    string artista;
-    string album;
+    std::string nombre;
+    std::string artista;
+    std::string album;
     int anio;
-    int duracion;
-    string ubicacion;
+    int duracion; // en segundos
+    std::string ruta;
 
 public:
     Cancion();
-    Cancion(int id, string nombre, string artista, string album, int anio, int duracion, string ubicacion);
 
-    int getId();
-    string getNombre();
-    string getArtista();
-    string getAlbum();
-    int getAnio();
-    int getDuracion();
-    string getUbicacion();
+    Cancion(int id, std::string nombre, std::string artista, std::string album,
+            int anio, int duracion, std::string ruta);
+    
+    int getId() const;
+    std::string getNombre() const;
+    std::string getArtista() const;
+    std::string getAlbum() const;
+    int getAnio() const;
+    int getDuracion() const;
+    std::string getRuta() const;
+
+    void setNombre(std::string nombre);
+    void setArtista(std::string artista);
+    void setAlbum(std::string album);
+
+    // Método de utilidad para imprimir los datos bonitos en consola
+    void imprimirDatos() const;
 };
 
 #endif
