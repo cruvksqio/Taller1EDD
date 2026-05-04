@@ -8,11 +8,7 @@ public:
     Nodo* siguiente;
     Nodo* anterior;
 
-    Nodo(T valor) {
-        dato = valor;
-        siguiente = nullptr;
-        anterior = nullptr;
-    }
+    Nodo(T valor) : dato(valor), siguiente(nullptr), anterior(nullptr) {}
 };
 
 #endif

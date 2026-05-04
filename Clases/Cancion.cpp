@@ -34,11 +34,22 @@ int Cancion::getDuracion() const { return duracion; }
 std::string Cancion::getRuta() const { return ruta; }
 
 // Implementación de Setters
+void Cancion::setId(int id) { this->id = id; }
 void Cancion::setNombre(std::string nombre) { this->nombre = nombre; }
 void Cancion::setArtista(std::string artista) { this->artista = artista; }
 void Cancion::setAlbum(std::string album) { this->album = album; }
+void Cancion::setAnio(int anio) { this->anio = anio; }
+void Cancion::setDuracion(int duracion) { this->duracion = duracion; }
+void Cancion::setRuta(std::string ruta) { this->ruta = ruta; }
 
-// Método para imprimir
+// Metodo similar a toString que imprime datos
 void Cancion::imprimirDatos() const {
     std::cout << nombre << " - " << artista << " (" << album << ") [" << anio << "]" << std::endl;
+}
+
+// Método para convertir a string
+std::string Cancion::toString() const {
+    return std::to_string(id) + ", " + nombre + ", " + artista + ", " +
+           album + ", " + std::to_string(anio) + ", " +
+           std::to_string(duracion) + ", " + ruta;
 }
