@@ -4,7 +4,6 @@
 #include <sstream>
 #include <cstdlib>
 #include <ctime>
-#include <limits>
 
 Reproductor::Reproductor()
     : reproduciendo(false), modoAleatorio(false), modoRepeticion(0),

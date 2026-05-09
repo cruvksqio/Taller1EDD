@@ -5,8 +5,7 @@
 #include "../Clases/Cancion.hpp"
 #include <iostream>
 #include <sstream>
-#include <cstdlib>
-#include <ctime>
+
 
 template <typename T>
 class SongList {
