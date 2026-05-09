@@ -26,7 +26,9 @@ playTracker es un reproductor de música por línea de comandos construido en C+
 
 ## Diagrama de Clases
 
-_[link diagrama clase :P]_
+![Diagrama de Clases](diagrama_taller_edd_1.png)
+
+(Stack hecho manualmente sin librerias STL)
 
 ## Instrucciones de Compilación y Ejecución
 
