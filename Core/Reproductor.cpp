@@ -171,21 +171,24 @@ void Reproductor::cargarEstado() {
 }
 
 void Reproductor::guardarEstado() {
+    // Al abrirlo así, C++ lo crea en el "Working Directory" actual
     std::ofstream archivo(archivoConfig);
 
     if (!archivo.is_open()) {
-        std::cerr << "Error critico: No se pudo guardar el archivo " << archivoConfig << "\n";
+        std::cerr << "Error: No se pudo crear el archivo " << archivoConfig << "\n";
         return;
     }
 
     archivo << "MODO_ALEATORIO " << (modoAleatorio ? "1" : "0") << "\n";
     archivo << "MODO_REPETICION " << modoRepeticion << "\n";
-
-    int estado = 0;
-    if (reproduciendo) estado = 1;
-    archivo << "ESTADO_REPRODUCCION " << estado << "\n";
-
+    archivo << "ESTADO_REPRODUCCION " << (reproduciendo ? "1" : "0") << "\n";
     archivo << "COLA_PENDIENTE " << listaReproduccion.obtenerIdsComoString() << "\n";
+
+    if (!archivo.is_open()) {
+        std::cout << "Archivo no encontrado en la raiz. Creando uno nuevo...\n";
+        guardarEstado(); // Esto creará el archivo en la carpeta del main
+        return;
+    }
 
     archivo.close();
 }
